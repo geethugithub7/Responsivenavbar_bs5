@@ -1,0 +1,92 @@
+
+
+/*Navbar*/
+.navbar{
+    background-color: #fff;
+    height: 80px;
+    margin: 20px;
+    border-radius: 16px;
+    padding: 0.5rem;
+}
+.navbar-brand{
+    font-weight: 500; /*placed on your font that will determine how bold or light your text will appear.*/
+    color: #009970; /*Color of the element*/
+    font-size: 24px;
+    transition: 0.3s color;
+}
+/*Login Button*/
+.login-button{
+    background-color: #009970; /* sets the background color of an element.*/
+    color: #fff; /*Color of the element*/
+    font-size: 14px; /*specify the height and size of the font*/
+    padding: 8px 20px; /*space between an element's border and the element's content*/
+    border-radius: 50px; /*rounds the corners of an element's outer border edge.*/
+    text-decoration: none; /*underlining, striking through, or adding a line above or below the text*/
+    transition: 0.3s background-color; /*control animation speed when changing CSS properties.*/
+}
+.login-button:hover{ /*:hover selector is used to select elements when you mouse over them.*/
+    background-color: #00b383;
+}
+.navbar-toggler{
+    border: none; /*None: specifies no border.*/
+    font-size: 1.25rem;
+}
+.navbar-toggler:focus , .btn-close:focus{ /* :focus selector is used to select the element that has focus. The :focus pseudo class is applied when an element is in the process of being selected/clicked/activated by keyboard or mouse.*/
+    box-shadow:none ; /* box-shadow property is used to apply one or more shadows to an element.*/
+    outline: none; /*An outline is a line that is drawn around elements, outside the borders, to make the element "stand out"*/
+   }
+.nav-link{
+    color: #666777;
+    font-weight: 500; /*placed on your font that will determine how bold or light your text will appear.*/
+    position: relative; /*positioned relative to its normal position*/
+}
+.nav-link:hover, .nav-link.active{
+    color: #000;;
+}
+@media (min-width:991px){
+    /*The @media CSS at-rule can be used to apply part of a style sheet based on the result of one or more media queries. */
+    /*min-width sets the minimum width that an element can be displayed as.*/
+.nav-link::before{ /*The :before and :after selectors in CSS is used to add content before and after an element.*/
+    content: ""; /*replaces content with a generated value. */
+    position: absolute; /*position property is used to specify where an element is displayed on the page.
+                          position: absolute; is positioned relative to the nearest positioned ancestor*/
+    bottom: 0; /* setting the vertical position of a positioned element*/
+    left: 50%; /* specifying the horizontal position of a positioned element.*/
+    transform: translateX(-50%); /*to reposition the element along the horizontal axis*/
+    width: 100%; /*sets an element's width.*/
+    height: 2px; /*specifies the height of an element*/
+    background-color: #009970; /*sets the background color of an element.*/
+    visibility: hidden; /*shows or hides an element without changing the layout of a document.*/
+    transition: 0.3s ease-in-out; /*ease-in and ease-out are timing functions in CSS used to control the speed of a CSS animation or transition over time.*/   
+}
+.nav-link:hover::before , .nav-link.active::before{ /*:hover is pseudo-class and :before & :after are pseudo-elements.*/
+    width: 100%;
+    visibility: visible;
+}
+}
+/*Image Section*/
+.image-section{
+    background: url(bg.jpg) no-repeat center;
+    background-size: cover;
+    width: 100%;
+}
+.image-section::before{
+    background-color: rgba(0,0,0,0.6);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.image-section .container{
+    height: 100vh;
+    z-index:1; /*controls the stacking order of overlapping elements on a page.*/
+    position: relative;
+}
+.image-section h1{
+    font-size: 1.5em;
+}
+.image-section h2{
+    font-size: 1.2em;
+}
